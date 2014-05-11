@@ -21,7 +21,19 @@ require.config({
 });
 
 require([
-    'backbone'
-], function (Backbone) {
+    'jquery',
+    'backbone',
+    'models/sections/text',
+    'views/sections/text',
+], function ($, Backbone, TextModel, TextView) {
     Backbone.history.start();
+
+    var text = new TextModel({
+        header: 'My first text section',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, debitis.'
+    });
+
+    var textview = new TextView({ model: text });
+
+    $('body').html(textview.render().el);
 });

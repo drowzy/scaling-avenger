@@ -6,13 +6,15 @@ define([
 ], function (_, Backbone) {
     'use strict';
 
-    var SectionsTextModel = Backbone.Model.extend({
-        url: '',
+    var TextModel = Backbone.Model.extend({
+        url: 'sections/text',
 
         initialize: function() {
         },
 
         defaults: {
+            header: '',
+            body: ''
         },
 
         validate: function(attrs, options) {
@@ -23,5 +25,5 @@ define([
         }
     });
 
-    return SectionsTextModel;
+    return TextModel;
 });

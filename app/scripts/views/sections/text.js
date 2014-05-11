@@ -8,16 +8,16 @@ define([
 ], function ($, _, Backbone, JST) {
     'use strict';
 
-    var SectionsTextView = Backbone.View.extend({
+    var TextView = Backbone.View.extend({
         template: JST['app/scripts/templates/sections/text.hbs'],
 
-        tagName: 'div',
+        tagName: 'section',
 
-        id: '',
+        // id: '',
 
-        className: '',
+        // className: '',
 
-        events: {},
+        // events: {},
 
         initialize: function () {
             this.listenTo(this.model, 'change', this.render);
@@ -25,8 +25,9 @@ define([
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
+            return this;
         }
     });
 
-    return SectionsTextView;
+    return TextView;
 });
