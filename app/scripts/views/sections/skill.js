@@ -8,20 +8,21 @@ define([
 ], function ($, _, Backbone, JST) {
   'use strict';
 
-  var SectionsSkillView = Backbone.View.extend({
+  var SkillView = Backbone.View.extend({
     template: JST['app/scripts/templates/sections/skill.hbs'],
     tagName: 'div',
-    id: '',
-    className: '',
-    events: {},
+    //id: '',
+    //className: '',
+    //events: {},
 
     initialize: function () {
       this.listenTo(this.model, 'change', this.render);
     },
     render: function () {
       this.$el.html(this.template(this.model.toJSON()));
+      return this;
     }
   });
 
-  return SectionsSkillView;
+  return SkillView;
 });
