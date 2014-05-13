@@ -13,8 +13,8 @@ define([
         },
 
         defaults: {
-            header: '',
-            body: ''
+            title: '',
+            content: ''
         },
 
         validate: function(attrs, options) {
